@@ -37,46 +37,6 @@ int main()
   {
     return 1;
   }
-  *p1 = 99;
-  free(p1);
-  *p1 = 100; // BAD - undefined behavior
-  
-   char* str1 = (char*)malloc(strlen("Thunderbird") + 1);
-  strcpy_s(str1, strlen("Thunderbird") + 1, "Thunderbird");
-  //...
-  free(str1);  // first free
-         //...
-  free(str1); // double free
-  
-  malloc(sizeof(int))
-    
-     const char arr[] = "hello";
-  const char *cp = arr;
-  printf("Size of arr %lu\n", (int)sizeof(arr));
-  printf("Size of *cp %lu\n", (int)sizeof(*cp));
-  
-  int* p = (int*)malloc(sizeof(int)); // Let's call this memory block 1
-  *p = 5;
-  p = (int*)malloc(sizeof(int)); // Now you have no way to delete memory block 1 !!!
-
-   int  num = 2147483647;
-  int *pi = &num;
-  short *ps = (short*)pi;
-  printf("pi: %p  Value(16): %x  Value(10): %d\n", pi, *pi, *pi);
-  printf("ps: %p  Value(16): %hx  Value(10): %hd\n", ps, (unsigned short)*ps, (unsigned short)*ps);
-  
-  char* str1 = (char*)malloc(strlen("Thunderbird") + 1);
-  strcpy(str1, "Thunderbird");
-  char* str2 = (char*)malloc(strlen("Thunderbird") + 1);
-  strcpy(str2, "Thunderbird");
-  if (str1 == str2)
-  {
-    printf("Two strings are equal\n");
-  }
-  else
-  {
-    printf("Two strings are NOT equal\n");
-  }
-
+ 
   return 0;
 }
